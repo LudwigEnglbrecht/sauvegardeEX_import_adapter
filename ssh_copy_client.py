@@ -5,7 +5,7 @@ import paramiko
 hostname = '192.168.178.57'
 port = 22
 username = 'root'
-password = 'alpine'
+password = 'PASSWORD'
 
 if __name__ == "__main__":
     #paramiko.util.log_to_file('paramiko.log')
