@@ -38,14 +38,20 @@ After your analysis you can stop the script with CTRL + C
 To get the recorded data from the device perform the following steps:
 
 - remove your secruity device from known hosts
-`ssh-keygen -f "/root/.ssh/known_hosts" -R "192.168.178.57"`
+```
+ssh-keygen -f "/root/.ssh/known_hosts" -R "192.168.178.57"
+```
 
 - connect and login to the secruity device
-`ssh root@192.168.178.57`
-`exit`
+```
+ssh root@192.168.178.57
+exit
+```
 
 - start python script to copy all files from the device
-`python ssh_copy_client.py`
+```
+python ssh_copy_client.py`
+```
 
 - to create from the files a "filecash.db" execute the following commands:
 ```
