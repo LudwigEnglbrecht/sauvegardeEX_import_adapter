@@ -60,7 +60,7 @@ php build_db.php
 ```
 ###################
 
-Now you have a filecache.db containing your file version of your security device and you can it sync with cdpclient of Sauvegarde :D
+**Now you have a filecache.db containing your file version of your security device and you can it sync with cdpclient of Sauvegarde :D**
 
 ###################
 
