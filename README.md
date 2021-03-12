@@ -1,15 +1,15 @@
 # sauvegardeEX_import_adapter
 This is an input adapter for “live capturing” files from iOS / OS X / Android / FirefoxOS / (Linux) for Sauvegare 
 
-# Purpose of this tool (tool chain)
+## Purpose of this tool (tool chain)
 This project consists of three scripts to enable live data acquisition from Systems with the operating system iOS / OS X / Android / FirefoxOS / (Linux) for the tool Sauvegarde and SauvegardeEx. The purpose of this project is to equip a system “ad-hoc” with a systematically file exfiltration and to import it to Sauvegarde. In the context of our research we use an extended version of this tool (called SauvegardeEx) to perform file-based security analysis.
 
-# Requirements
+## Requirements
 - Das Untersuchungsobjekt benötigt lediglich einen shell Zugang und die vorinstallierten Tools fsmon und dd.
 - Der Extration client needs an ssh-client, python and php
 TODO: Insert figure
 
-# Usage of the scripts (Step 1)
+## Usage of the scripts (Step 1)
 Connect to your Security Research Device via SSH and execute the following commands:
 ```
 cd /tmp/
@@ -30,15 +30,15 @@ fsmon | cut -f4 | xargs -n 1 bash -c 'bash /tmp/backup/script $@' bash
 
 After your analysis you can stop the script with CTRL + C
 
-## Usage video of the scripts (Step 1)
+### Usage video of the scripts (Step 1)
+![](vid1.gif)
 
 
 
 
 
 
-
-# Usage of the scripts (Step 2)
+## Usage of the scripts (Step 2)
 To get the recorded data from the device perform the following steps:
 
 - remove your secruity device from known hosts
@@ -54,7 +54,7 @@ exit
 
 - start python script to copy all files from the device
 ```
-python ssh_copy_client.py`
+python ssh_copy_client.py
 ```
 
 - to create from the files a "filecash.db" execute the following commands:
