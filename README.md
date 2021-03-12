@@ -62,6 +62,12 @@ python ssh_copy_client.py
 cp filecache_template.db filecache.db
 php build_db.php
 ```
+
+### Usage video of the scripts (Step 2)
+![](vid2.gif)
+
+
+
 ###################
 
 **Now you have a filecache.db containing your file version of your security device and you can it sync with cdpclient of Sauvegarde :D**
