@@ -2,7 +2,9 @@
 This is an input adapter for “live capturing” files from iOS / OS X / Android / FirefoxOS / (Linux) for Sauvegare 
 
 ## Purpose of this tool (tool chain)
-This project consists of three scripts to enable live data acquisition from Systems with the operating system iOS / OS X / Android / FirefoxOS / (Linux) for the tool Sauvegarde and SauvegardeEx. The purpose of this project is to equip a system “ad-hoc” with a systematically file exfiltration and to import it to Sauvegarde. In the context of our research we use an extended version of this tool (called SauvegardeEx) to perform file-based security analysis.
+This project consists of three scripts to enable live data acquisition from Systems with the operating system iOS / OS X / Android / FirefoxOS / (Linux) for the tool Sauvegarde and SauvegardeEx. The purpose of this project is to equip a system “ad-hoc” with a systematically file exfiltration and to import it to Sauvegarde. In the context of our research we use an extended version of this tool (called SauvegardeEx) to perform file-based security analysis. The following figure illustrates the intention of the adapter:
+![](sauvegarde_adapter.png)
+
 
 ## Requirements
 - Das Untersuchungsobjekt benötigt lediglich einen shell Zugang und die vorinstallierten Tools fsmon und dd.
@@ -32,9 +34,6 @@ After your analysis you can stop the script with CTRL + C
 
 ### Usage video of the scripts (Step 1)
 ![](vid1.gif)
-
-
-
 
 
 
