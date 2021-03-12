@@ -62,19 +62,21 @@ cp filecache_template.db filecache.db
 php build_db.php
 ```
 
+**Now you have a filecache.db containing your file version of your security device and you can it sync with cdpclient of Sauvegarde :D**
+
+
 ### Usage video of the scripts (Step 2)
 ![](vid2.gif)
 
 
 
-###################
+## Syncing with the filecache.db with Sauvegarde (Step 3)
+```
+# copy filecache.db into your cdpclient folder
+# execute:
+cdpclient -c ../client.conf
+```
 
-**Now you have a filecache.db containing your file version of your security device and you can it sync with cdpclient of Sauvegarde :D**
 
-###################
-
-###################
-
-WARNING: This Project is still in beta phase and is not ready for production
-
-###################
+# DISCLAIMER
+WARNING: This Project is still in beta phase and is not ready for usage in production!
