@@ -9,9 +9,6 @@ This project consists of three scripts to enable live data acquisition from Syst
 - Der Extration client needs an ssh-client, python and php
 TODO: Insert figure
 
-# Usage Video
-TODO: Insert video
-
 # Usage of the scripts (Step 1)
 Connect to your Security Research Device via SSH and execute the following commands:
 ```
@@ -32,6 +29,13 @@ fsmon | cut -f4 | xargs -n 1 bash -c 'bash /tmp/backup/script $@' bash
 ```
 
 After your analysis you can stop the script with CTRL + C
+
+## Usage video of the scripts (Step 1)
+
+
+
+
+
 
 
 # Usage of the scripts (Step 2)
