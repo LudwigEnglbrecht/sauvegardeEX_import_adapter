@@ -159,7 +159,7 @@
 			
 			
 			
-			$db = new SQLite3('./filecache2.db');
+			$db = new SQLite3('./filecache.db');
 			
 			
 			// $db->exec("CREATE TABLE cars(id INTEGER PRIMARY KEY, name TEXT, price INT)");
@@ -168,10 +168,70 @@
 			$db->exec("INSERT INTO buffers(url, data) VALUES('/Meta.json', '$data')");
 			
 			
+			// $data_array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41];
+			// $data_array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 			
-			$datadata = '{"data_array": '.json_encode ( $data_array ).'}';
+			
+			
+			
+			
+			if (  count($data_array) <= 20 ){
+				// Nur die ersten 20 elemente in die db
+				$datadata = '{"data_array": '.json_encode ( array_slice($data_array, 0, count($data_array) )  ).'}';
+				// echo $datadata;
+				$db->exec("INSERT INTO buffers(url, data) VALUES('/Data_Array.json', '$datadata')");
+			}else{
+				
+
+				
+				
+				$full_rounds =  floor (      count($data_array)  / 20 );
+				$noleft_last_round = count($data_array) % 20;
+				$no = count($data_array);
+				
+				
+				// echo "Habe so viele elemente ". $no ;
+				// echo "Das sind so viele ganze runden ".$full_rounds;
+				// echo "und so viel bleibt uebrig in der letzten runde ". $noleft_last_round;
+				// die();
+				
+				// echo "GESAMT START";
+				// echo json_encode ( $data_array );
+				// echo "GESAMT ENDE";
+				
+				for($i = 0; $i < $full_rounds ; ++$i) {
+					// echo "runde ".$i." das sind ";
+					// echo json_encode ( array_slice($data_array,  (0 + $i * 20 )  , (0 +  20  )  ));
+					
+					$datadata = '{"data_array": '.json_encode (       array_slice($data_array,  (0 + $i * 20 )  , (0 +  20  )  )        ).'}';
+					// echo $datadata;
+					$db->exec("INSERT INTO buffers(url, data) VALUES('/Data_Array.json', '$datadata')");
+					
+				}
+				
+				
+				
+				
+				
+				// echo "Und die übrig gebliebenen sind";
+				// echo json_encode ( array_slice($data_array,  (0 + $full_rounds * 20 )  , 0 + $full_rounds * 20 -1 + $noleft_last_round ) ); 
+				if ( $noleft_last_round > 0 ){
+					
+						$datadata = '{"data_array": '.json_encode (   array_slice($data_array,  (0 + $full_rounds * 20 )  , 0 + $full_rounds * 20 -1 + $noleft_last_round )   ).'}';
+						// echo $datadata;
+						$db->exec("INSERT INTO buffers(url, data) VALUES('/Data_Array.json', '$datadata')");
+				}
+				// die;
+				
+				
+				
+				
+				
+			}
+			
+			// $datadata = '{"data_array": '.json_encode ( array_slice($data_array, 0, 20)  ).'}';
 			// echo $datadata;
-			$db->exec("INSERT INTO buffers(url, data) VALUES('/Data_Array.json', '$datadata')");
+			// $db->exec("INSERT INTO buffers(url, data) VALUES('/Data_Array.json', '$datadata')");
 			
 			
 			
