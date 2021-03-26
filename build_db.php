@@ -163,7 +163,7 @@
 			
 			
 			// $db->exec("CREATE TABLE cars(id INTEGER PRIMARY KEY, name TEXT, price INT)");
-			$data ='{"msg_id": 1, "filetype": 1, "mode": 33188, "atime": '.$atimeonefile.', "ctime": '.$ctimeonefile.', "mtime": '.$mtimeonefile.', "fsize": '.$filesize.', "inode": '.$inodeonefile.', "owner": "root", "group": "root", "uid": 0, "gid": 0, "name": "'.$filename.'", "link": "", "hostname": "iphone11", "data_sent": false, "hash_list": '.json_encode ($hasharray).'}';
+			$data ='{"msg_id": 1, "filetype": 1, "mode": 33188, "atime": '.$atimeonefile.', "ctime": '.$ctimeonefile.', "mtime": '.$mtimeonefile.', "fsize": '.$filesize.', "inode": '.$inodeonefile.', "owner": "root", "group": "root", "uid": 0, "gid": 0, "name": "'.$filename.'", "link": "", "hostname": "iPhone11_iOS_14.5", "data_sent": false, "hash_list": '.json_encode ($hasharray).'}';
 			// echo $data;
 			$db->exec("INSERT INTO buffers(url, data) VALUES('/Meta.json', '$data')");
 			
@@ -221,6 +221,7 @@
 						// echo $datadata;
 						$db->exec("INSERT INTO buffers(url, data) VALUES('/Data_Array.json', '$datadata')");
 				}
+				// closedir($handlepath);
 				// die;
 				
 				
