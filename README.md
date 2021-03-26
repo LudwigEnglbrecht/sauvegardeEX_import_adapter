@@ -7,11 +7,11 @@ This project consists of three scripts to enable live data acquisition from Syst
 
 
 ## Requirements
-- Das Untersuchungsobjekt benötigt lediglich einen shell Zugang und die vorinstallierten Tools fsmon und dd.
-- Der Extration client needs an ssh-client, python and php
-TODO: Insert figure
+- The target device only needs shell access and the pre-installed tools _fsmon_ and _dd_.
+- The Extration client needs an _ssh-client_, _python2_ and _php_.
 
-## Usage of the scripts (Step 1)
+
+## Usage of the scripts on the target device (Step 1)
 Connect to your Security Research Device via SSH and execute the following commands:
 ```
 cd /tmp/
