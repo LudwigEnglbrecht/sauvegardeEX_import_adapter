@@ -76,6 +76,8 @@ php build_db.php
 # execute:
 cdpclient -c ../client.conf
 ```
+![](sauvegarde_sync.png)
+
 
 
 # DISCLAIMER
