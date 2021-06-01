@@ -18,16 +18,18 @@ cd /tmp/
 mkdir backup
 cd backup
 echo '#!/bin/sh' > script
-echo 'string=$1 ' >> script
+echo 'string=$2 ' >> script
+echo 'pid=$1 ' >> script
 echo 'string2=${string/\/tmp\/backup/youwillneverfindthis}' >> script
 echo 'randstr=$RANDOM$RANDOM$RANDOM$RANDOM'  >> script
 echo 'stat $string2 >> /tmp/backup/$randstr.meta ' >> script
+echo 'echo $pid >> /tmp/backup/$randstr.meta ' >> script
 echo 'dd if=$string2 of=/tmp/backup/$randstr.data  bs=10  &' >> script
 ```
 
 The local data backup can be started by executing:
 ```
-fsmon | cut -f4 | xargs -n 1 bash -c 'bash /tmp/backup/script $@' bash
+fsmon | cut -f 2,4 | xargs -n 2 bash -c 'bash /tmp/backup/script $@' bash
 ```
 
 After your analysis you can stop the script with CTRL + C
