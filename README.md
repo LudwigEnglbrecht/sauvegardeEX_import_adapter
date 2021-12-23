@@ -58,7 +58,7 @@ exit
 python ssh_copy_client.py
 ```
 
-- to create from the files a "filecash.db" execute the following commands:
+- to create from the aquired files a "filecache.db" execute the following commands:
 ```
 cp filecache_template.db filecache.db
 php build_db.php
